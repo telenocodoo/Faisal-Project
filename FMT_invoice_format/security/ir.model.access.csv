@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_fmt_order_status,access_fmt_order_status,model_fmt_order_status,,1,1,1,1
+access_consinee_sale_order,access_consinee_sale_order,model_consinee_sale_order,,1,1,1,1
+access_shipping_sale_order,access_shipping_sale_order,model_shipping_sale_order,,1,1,1,1
+access_sea_port,access_sea_port,model_sea_port,,1,1,1,1

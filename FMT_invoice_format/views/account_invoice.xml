@@ -1,6 +1,50 @@
 <odoo>
     <data>
 
+        <record id="sale_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//group" position="inside">
+                    <group>
+                        <field name="consinee" />
+                        <field name="date_of_prealert" />
+                        <field name="eta_date" />
+                        <field name="po_date" />
+                        <field name="landing_place" />
+                    </group>
+
+                    <group>
+                        <field name="bill_of_lading" />
+                        <field name="bayan" />
+                        <field name="saddad_payment_date" />
+                        <field name="shipping_line" />
+                        <field name="order_status_id" />
+                    </group>
+                </xpath>
+
+                <xpath expr="//field[@name='validity_date']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']//tree//field[@name='name']" position="after">
+                    <field name="arabic_name" />
+                </xpath>
+
+                <!--<xpath expr="//button[@name=%(sale.action_view_sale_advance_payment_inv)d][2]" position="attributes">-->
+                    <!--<attribute name="string">mmmmmmmmmmmmm</attribute>-->
+                    <!--<attribute name="context">{'default_bayan': 'mmmmmmmmmmmmm'}</attribute>-->
+                <!--</xpath>-->
+                    <!--<button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"-->
+                        <!--type="action" context="{'default_advance_payment_method': 'percentage'}"-->
+                        <!--attrs="{'invisible': ['|',('invoice_status', '!=', 'no'), ('state', '!=', 'sale')]}"/>-->
+                <!--</xpath>-->
+
+            </field>
+        </record>
+
         <record id="account_move_form_inherit" model="ir.ui.view">
             <field name="name">account.move</field>
             <field name="model">account.move</field>
@@ -8,18 +52,48 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//field[@name='ref']" position="before">
-                    <field name="consinee" />
-                    <field name="date_of_prealert" />
-                    <field name="eta_date" />
-                    <field name="po_date" />
-                    <field name="landing_place" />
+                    <field name="consinee" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
+                    <field name="date_of_prealert" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
+                    <field name="eta_date" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
+                    <field name="po_date" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
+                    <field name="landing_place" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
                 </xpath>
 
                 <xpath expr="//field[@name='company_id']" position="after">
-                    <field name="bill_of_lading" />
-                    <field name="bayan" />
-                    <field name="saddad_payment_date" />
-                    <field name="shipping_line" />
+                    <field name="bill_of_lading" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
+                    <field name="bayan" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
+                    <field name="saddad_payment_date" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
+                    <field name="shipping_line" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
+                    <field name="order_status_id" attrs="{'invisible' : [('type', '=', 'in_invoice')]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='name']" position="after">
+                    <field name="arabic_name" />
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="account_move_tree_inherit" model="ir.ui.view">
+            <field name="name">account.move</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="order_status_id" invisible="context.get('default_type') not in ('out_invoice', 'in_refund','in_receipt')" />
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="sale_order_tree_inherit" model="ir.ui.view">
+            <field name="name">sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='state']" position="after">
                     <field name="order_status_id" />
                 </xpath>
 
@@ -30,6 +104,46 @@
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="arabic_name" placeholder="Arabic Name....."/>
+                </xpath>
+
+            </field>
+        </record>
+
+<!--        <record id="account_form_inherit3" model="ir.ui.view">-->
+<!--            <field name="name">sale.advance.payment.inv</field>-->
+<!--            <field name="model">sale.advance.payment.inv</field>-->
+<!--            <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>-->
+<!--            <field name="arch" type="xml">-->
+
+<!--                <xpath expr="//button[@name='create_invoices']" position="attributes">-->
+<!--                    <attribute name="string">mmmmmmmmmmmmm</attribute>-->
+<!--                    <attribute name="context">{'default_bayan': active_id.bayan}</attribute>-->
+<!--                </xpath>-->
+
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="product_template_form_inherit" model="ir.ui.view">
+            <field name="name">product.template</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="arabic_name" placeholder="Arabic Name....."/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="product_product_form_inherit" model="ir.ui.view">
+            <field name="name">product.product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
             <field name="arch" type="xml">
 
                 <xpath expr="//field[@name='name']" position="after">

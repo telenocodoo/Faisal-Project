@@ -3,7 +3,7 @@
     <report
         id="invoice_report_id"
         model="account.move"
-        string="FMT Invoice Report"
+        string="AFCC Invoice Report"
         name="FMT_invoice_format.invoice_report_template"
         file="FMT_invoice_format.invoice_report_id"
         report_type="qweb-pdf" />
@@ -166,6 +166,7 @@
                                 </h1>
                             </td>
                         </tr>
+
                         <tr>
                             <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 <p>
@@ -180,12 +181,25 @@
                         </tr>
                         <tr>
                             <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <p>
+                                <h6>
                                     <span style="font-weight:bold;">Importer name</span><span t-esc="o.partner_id.name"/>
                                     <span style="font-weight:bold;">اسم العميل</span><span t-esc="o.partner_id.arabic_name"/>
-                                </p>
+                                </h6>
                             </td>
                         </tr>
+
+                         <tr>
+                            <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                <h1>
+                                    <h6>
+                                        <span style="font-weight:bold;">Landing Place</span>
+                                        <span t-esc="o.landing_place.name"/>
+                                        <span style="font-weight:bold;">الميناء</span>
+                                    </h6>
+                                </h1>
+                            </td>
+                        </tr>
+
                         <tr>
                             <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
                                 <p><span style="font-weight:bold;">BAYAN#</span><span t-esc="o.bayan"/><span style="font-weight:bold;">رقم البيان</span></p>
@@ -193,7 +207,7 @@
                             <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
                             </td>
                             <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <span  style="font-weight:bold;" t-esc="o.landing_place"/>
+                                <span  style="font-weight:bold;" t-esc="o.bill_of_lading"/>
                             </td>
                         </tr>
 
@@ -232,6 +246,7 @@
                                     <!--</td>-->
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:40% !important;">
                                         <span t-field="line.product_id.name"/>
+                                        <span t-field="line.product_id.arabic_name"/>
                                     </td>
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:20% !important;">
                                         <span t-field="line.price_unit"/>

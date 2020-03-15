@@ -10,7 +10,7 @@
     'website': "https://telenoc.org",
     'category': 'Account',
     'version': '0.1',
-    'depends': ['base', 'account'],
+    'depends': ['base', 'sale', 'account', 'product'],
     'data': [
         'security/ir.model.access.csv',
         'views/account_invoice.xml',

@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+
+        <record id="sale_order_form_view_inherit" model="ir.ui.view" >
+            <field name="name">sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!--attrs="{'invisible': [('invoice_count', '=', 0)]}"-->
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_view_transportation"
+                            string="Request Transportation"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-truck"
+                            states="sale"
+                    >
+                    </button>
+<!--                    <button name="action_view_delivery2"-->
+<!--                            string="Transportation33"-->
+<!--                            type="object"-->
+<!--                            class="oe_stat_button"-->
+<!--                            icon="fa-truck" >-->
+<!--                    </button>-->
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <group>
+                        <field name="from_id" />
+                        <field name="departure_time" />
+                    </group>
+
+                    <group>
+                        <field name="to_id" />
+                        <field name="arrival_time" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

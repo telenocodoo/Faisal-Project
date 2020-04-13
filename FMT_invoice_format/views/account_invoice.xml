@@ -100,6 +100,19 @@
             </field>
         </record>
 
+        <record id="sale_order_tree_inherit2" model="ir.ui.view">
+            <field name="name">sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='invoice_status']" position="after">
+                    <field name="order_status_id" />
+                </xpath>
+
+            </field>
+        </record>
+
         <record id="res_partner_form_inherit3" model="ir.ui.view">
             <field name="name">res.partner</field>
             <field name="model">res.partner</field>

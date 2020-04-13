@@ -103,135 +103,356 @@
           <t t-foreach="docs" t-as="o">
                 <t t-set="emp_count" t-value="0"/>
                  <div class="page">
+                    <br/>
+                    <br/>
+<!--                     <table class='table table-bordered' style="border-bottom: 0px solid #000000 !important;margin:0 !important;font-size:0.5em !important;text-align:center;width:100%;table-layout: auto !important;">-->
+<!--                        <thead>-->
 
+<!--                            <tr style="background:#33afff;color:white;">-->
+<!--                                <td colspan="3" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="font-size:15px;margin-bottom:0;">-->
+<!--                                        <span>Invoice Details</span>-->
+<!--                                        <span>بيانات الفاتوره</span>-->
+<!--                                    </p>-->
+<!--                                </td>-->
+<!--                                <td colspan="3" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="font-size:15px;margin-bottom:0;">-->
+<!--                                        <span>Customer Information</span>-->
+<!--                                        <span>بيانات العميل</span>-->
+<!--                                    </p>-->
+<!--                                </td>-->
+<!--                             </tr>-->
+<!--                            <tr>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                     <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;padding-right:10px;">Invoice NO</span>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="margin-bottom:0;">-->
+<!--                                       <span style="font-size:13px;" t-esc="o.name"/>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                        <span style="font-size:13px;padding-left:10px;">فاتوره رقم</span>-->
+<!--                                </td>-->
 
-                     <!--<table style="width:100% !important;margin:0 0 10px 0 !important;padding:0 !important;border-collapse: separate !important;font-size:0.5em !important;text-align:center;">-->
-                         <!--<tr>-->
-                            <!--<td rowspan="7" style="border: 1px solid #000000 !important;border-radius:5px !important;width:40%;">-->
-                                <!--<p style="margin:0 10px 5px 10px;font-weight:bold;text-align:right;"><span style="float:left;">Customer Name:</span><span style="">اسم العميل</span></p>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                     <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;padding-right:10px;">Importer name</span>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;" t-esc="o.partner_id.name"/>-->
+<!--                                        <span style="font-size:13px;padding-left:10px;" t-esc="o.partner_id.arabic_name"/>-->
+<!--                                     </p>-->
+<!--                                </td>-->
 
-                                <!--<p style="margin:0 10px 0px 10px;text-align:left;"><span t-field="o.partner_id.name"/></p>-->
-                                 <!--<p style="margin:0 10px 0px 10px;text-align:left;"><span t-field="o.partner_id.street"/></p>-->
-                                 <!--<p style="margin:0 10px 0px 10px;text-align:left;"><span t-field="o.partner_id.city"/> - <span t-field="o.partner_id.state_id.name"/> - <span t-field="o.partner_id.zip"/></p>-->
-                                 <!--<p style="margin:0 10px 0px 10px;text-align:left;"><span t-field="o.partner_id.country_id.name"/></p>-->
-                                 <!--<p style="margin:0 10px 0px 10px;text-align:left;"><span t-field="o.partner_id.email"/></p>-->
-                                 <!--<p style="margin:0 10px 0px 10px;text-align:left;">Vat ID : <span t-field="o.partner_id.vat"/></p>-->
-                            <!--</td>-->
-                             <!--<td rowspan="7" style="border: 1px solid #ffffff !important;">-->
-                             <!--</td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-right: 0px !important;border-radius:5px !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;vertical-align: middle;">-->
-                                 <!--<span t-field="o.number"/>-->
-                             <!--</td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-radius:5px !important;border-top-left-radius: 0 !important;border-bottom-left-radius: 0 !important;">-->
-                                 <!--<p style="margin:0;font-weight:bold;">رقم الفاتوره</p><p style="margin:0;font-weight:bold;">Invoice No.</p>-->
-                             <!--</td>-->
-                             <!--<td style="border: 1px solid #ffffff !important;"></td>-->
-                             <!--<td style="vertical-align: middle;border: 1px solid #000000 !important;border-right: 0px !important;border-radius:5px !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;"><span t-field="o.date_invoice"/></td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-radius:5px !important;border-top-left-radius: 0 !important;border-bottom-left-radius: 0 !important;">-->
-                                 <!--<p style="margin:0;font-weight:bold;">تاريخ الفاتوره</p><p style="margin:0;font-weight:bold;">Invoice Date</p>-->
-                             <!--</td>-->
-                         <!--</tr>-->
-                         <!--<tr><td colspan="5" style="border:1px solid #ffffff;"></td></tr>-->
-                         <!--<tr>-->
-                             <!--<td style="vertical-align: middle;border: 1px solid #000000 !important;border-right: 0px !important;border-radius:5px !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;"><span t-field="o.user_id.name"/></td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-radius:5px !important;border-top-left-radius: 0 !important;border-bottom-left-radius: 0 !important;"><p style="margin:0;font-weight:bold;">مندوب</p><p style="margin:0;font-weight:bold;">Salesman</p></td>-->
-                             <!--<td style="border: 1px solid #ffffff !important;"></td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-right: 0px !important;border-radius:5px !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;vertical-align: middle;"><span t-field="o.payment_term_id.name"/></td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-radius:5px !important;border-top-left-radius: 0 !important;border-bottom-left-radius: 0 !important;"><p style="margin:0;font-weight:bold;">شروط الدفع</p><p style="margin:0;font-weight:bold;">Mode Of Payment</p></td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
 
-                         <!--</tr>-->
-                         <!--<tr><td colspan="5" style="border:1px solid #ffffff;"></td></tr>-->
-                         <!--<tr>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-right: 0px !important;border-radius:5px !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;vertical-align: middle;"><span t-field="o.origin"/></td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-radius:5px !important;border-top-left-radius: 0 !important;border-bottom-left-radius: 0 !important;"><p style="margin:0;ffont-weight:bold;">رقم الامر</p><p style="margin:0;font-weight:bold;">Purchase Order</p></td>-->
-                             <!--<td style="border: 1px solid #ffffff !important;"></td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-right: 0px !important;border-radius:5px !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;vertical-align: middle;"><span t-field="o.date_order"/></td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-radius:5px !important;border-top-left-radius: 0 !important;border-bottom-left-radius: 0 !important;"><p style="margin:0;font-weight:bold;">تاريخ الامر</p><p style="margin:0;font-weight:bold;">P.O.Date</p></td>-->
-                         <!--</tr>-->
-                         <!--<tr><td colspan="5" style="border:1px solid #ffffff;"></td></tr>-->
-                         <!--<tr>-->
-                            <!--<td style="border: 1px solid #000000 !important;border-right: 0px !important;border-radius:5px !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;vertical-align: middle;" colspan="4"><span t-field="o.delivery_permition"/></td>-->
-                             <!--<td style="border: 1px solid #000000 !important;border-radius:5px !important;border-top-left-radius: 0 !important;border-bottom-left-radius: 0 !important;"><p style="margin:0;font-weight:bold;">اذن تسليم</p><p style="margin:0;font-weight:bold;">Delivery Note No.</p></td>-->
-                         <!--</tr>-->
-                     <!--</table>-->
+<!--                                    <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;">اسم العميل</span>-->
+<!--                                    </p>-->
+<!--                                </td>-->
 
+<!--                            </tr>-->
 
+<!--                            <tr>-->
+<!--                                    <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                     <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;padding-right:10px;">Date</span>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="margin-bottom:0;">-->
+<!--                                       <span style="font-size:13px;" t-esc="o.invoice_date"/>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                        <span style="font-size:13px;padding-left:10px;">تاريخ</span>-->
+
+<!--                                </td>-->
+
+<!--                                <td rowspan="4" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                     <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;padding-right:10px;">Customer VAT#</span>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+
+<!--                                <td rowspan="4" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;padding-left:10px;" t-esc="o.partner_id.vat"/>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+
+<!--                                <td rowspan="4" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+
+<!--                                    <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;">الرقم الضريبي للعميل</span>-->
+<!--                                    </p>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+
+<!--                            <tr>-->
+<!--                                    <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                     <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;padding-right:10px;">Landing Place</span>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="margin-bottom:0;">-->
+<!--                                       <span style="font-size:13px;" t-esc="o.landing_place.name"/>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                        <span style="font-size:13px;padding-left:10px;">الميناء</span>-->
+<!--                                </td>-->
+
+<!--                            </tr>-->
+
+<!--                            <tr>-->
+<!--                                    <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                     <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;padding-right:10px;">BAYAN#</span>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="margin-bottom:0;">-->
+<!--                                       <span style="font-size:13px;" t-esc="o.bayan"/>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                        <span style="font-size:13px;padding-left:10px;">رقم البيان</span>-->
+<!--                                </td>-->
+
+<!--                            </tr>-->
+
+<!--                            <tr>-->
+<!--                                    <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                     <p style="margin-bottom:0;">-->
+<!--                                        <span style="font-size:13px;padding-right:10px;">Bill of Lading</span>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="margin-bottom:0;">-->
+<!--                                       <span style="font-size:13px;" t-esc="o.bill_of_lading"/>-->
+<!--                                     </p>-->
+<!--                                </td>-->
+<!--                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                        <span style="font-size:13px;padding-left:10px;">بوليصة الشحن</span>-->
+<!--                                </td>-->
+
+<!--                            </tr>-->
+
+<!--                        </thead>-->
+<!--                     </table>-->
+
+                     <div class="container-fluid" >
+                          <div style="width:100%;" class="row">
+                            <div class="col-auto" style="width:100%;text-align:center;line-height: 0.5 !important;">
+                                <h3 style="color:black;"><span style="padding-right:5px;">Invoice</span><span>فاتورة</span></h3>
+                            </div>
+                          </div>
+                     </div>
+
+                     <div class="container-fluid" >
+                          <div style="width:100%;" class="row">
+                            <div class="col-auto" style="width:100%;text-align:left;line-height: 0.5 !important;">
+                                <h3 t-if="o.name" style="color:black;"><span t-esc="o.name"/> </h3>
+                            </div>
+                          </div>
+                     </div>
+                     <br></br>
+
+                     <div class="container-fluid" >
+                          <div style="width:100%;" class="row">
+                            <div class="col-auto" style="width:50%;text-align:left;line-height: 0.5 !important;">
+                              <p t-if="o.partner_id.name"><span style="color:black;">Customer Name :</span> <span t-esc="o.partner_id.name"/></p>
+                              <p t-if="o.partner_id.street"><span style="color:black;">Customer Address : </span><span t-esc="o.partner_id.street"/></p>
+                              <p t-if="o.partner_id.vat"><span style="color:black;">Customer VAT No:</span><span t-esc="o.partner_id.vat"/></p>
+                              <p t-if="o.landing_place.name"><span style="color:black;">Sea Port :</span><span t-esc="o.landing_place.name"/></p>
+        <!--                      <p t-if="o.partner_id.phone">Telephone :</p>-->
+        <!--                      <p t-if="o.partner_id.mobile">Mobile :</p>-->
+        <!--                      <p t-if="o.partner_id.email">Email :</p>-->
+        <!--                      <p t-if="o.name"><span style="font-weight:bold !important;">Invoice # :</span></p>-->
+        <!--                      <p t-if="o.invoice_payment_term_id"><span>Payment Terms :</span></p>-->
+<!--                              <p t-if="o.bayan"><span>BAYAN# :</span></p>-->
+<!--                              <p t-if="o.bill_of_lading"><span>Bill of Lading :</span></p>-->
+                            </div>
+<!--                            <div class="col-auto" style="width:40%;text-align:center;line-height: 0.5 !important;">-->
+<!--                              <p t-if="o.partner_id.name">-->
+<!--                                  <span t-esc="o.partner_id.name"/>-->
+<!--                                  <span t-esc="o.partner_id.arabic_name"/>-->
+<!--                              </p>-->
+<!--        &lt;!&ndash;                      <p t-if="o.partner_id.phone"> <span t-esc="o.partner_id.phone"/> </p>&ndash;&gt;-->
+<!--        &lt;!&ndash;                      <p t-if="o.partner_id.mobile"> <span t-esc="o.partner_id.mobile"/> </p>&ndash;&gt;-->
+<!--        &lt;!&ndash;                      <p t-if="o.partner_id.email"> <span t-esc="o.partner_id.email"/> </p>&ndash;&gt;-->
+<!--                              <p t-if="o.partner_id.vat"> <span t-esc="o.partner_id.vat"/> </p>-->
+<!--        &lt;!&ndash;                      <p t-if="o.name"><span t-esc="o.name"/></p>&ndash;&gt;-->
+<!--        &lt;!&ndash;                      <p t-if="o.invoice_payment_term_id"><span t-esc="o.invoice_payment_term_id.name"/></p>&ndash;&gt;-->
+<!--                              <p t-if="o.landing_place.name"><span t-esc="o.landing_place.name"/></p>-->
+<!--                              <p t-if="o.bayan"><span t-esc="o.bayan"/></p>-->
+<!--                              <p t-if="o.bill_of_lading"><span t-esc="o.bill_of_lading"/></p>-->
+<!--                            </div>-->
+
+                            <div class="col-auto" style="width:50%;text-align:right;line-height: 0.5 !important;">
+                              <p t-if="o.partner_id.name"><span style="color:black;">اسم العميل</span>:<span t-esc="o.partner_id.arabic_name"/></p>
+                              <p t-if="o.partner_id.street2"><span style="color:black;">عنوان العميل</span>:<span t-esc="o.partner_id.street2"/></p>
+                              <p t-if="o.partner_id.vat"><span t-esc="o.partner_id.vat"/><span style="color:black;">:الرقم الضريبي للعميل</span></p>
+                              <p t-if="o.landing_place.name"><span style="color:black;">الميناء</span>:<span t-esc="o.landing_place.arabic_name"/></p>
+        <!--                      <p t-if="o.partner_id.phone"><span>:الجوال</span></p>-->
+        <!--                      <p t-if="o.partner_id.mobile"><span>:الهاتف المحمول</span></p>-->
+        <!--                      <p t-if="o.partner_id.email"><span>:البريد الالكتروني</span></p>-->
+        <!--                      <p t-if="o.name"><span style="font-weight:bold !important;">:فاتوره رقم</span></p>-->
+        <!--                      <p t-if="o.invoice_payment_term_id"><span>:شروط الدفع</span></p>-->
+<!--                              <p t-if="o.bayan"><span>:رقم البيان</span></p>-->
+<!--                              <p t-if="o.bill_of_lading"><span>:بوليصة الشحن</span></p>-->
+                            </div>
+                          </div>
+                      </div>
+                     <br></br>
+
+                     <div class="container-fluid" >
+                          <div style="width:100%;" class="row">
+                            <div t-if="o.invoice_origin" class="col-auto" style="width:35%;text-align:center;">
+                                <span style="font-size:17px;color:black;padding-right:5px;">Reference No</span>/
+                                <span style="font-size:19px;color:black;">المرجع</span><br></br>
+                                <p class="text-center" t-field="o.invoice_origin"/>
+                            </div>
+                              <div t-if="o.bayan" class="col-auto" style="width:30%;text-align:center;">
+                                <span style="font-size:17px;color:black;padding-right:5px;">Bayan</span>/
+                                <span style="font-size:19px;color:black;">رقم البيان </span><br></br>
+                                <p class="text-center" t-field="o.bayan"/>
+                            </div>
+                              <div t-if="o.bill_of_lading" class="col-auto" style="width:35%;text-align:center;">
+                                <span style="font-size:17px;color:black;padding-right:5px;">Bill of Lading</span>/
+                                <span style="font-size:19px;color:black;">بوليصة الشحن </span><br></br>
+                                <p t-field="o.bill_of_lading"/>
+                            </div>
+                          </div>
+                     </div>
+
+                     <br></br>
                     <table class='table table-bordered' style="border-bottom: 0px solid #000000 !important;margin:0 !important;font-size:0.5em !important;text-align:center;width:100%;table-layout: auto !important;">
-                        <thead>
-                            <tr>
-                            <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <h1>
-                                    <span>Invoice</span>
-                                    <span>فاتوره</span>
-                                </h1>
-                            </td>
-                        </tr>
+                        <thead style="background:#eeeded;color:black;">
 
-                        <tr>
-                            <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <p>
-                                    <span style="font-weight:bold;">Invoice NO</span><span t-esc="o.name"/><span style="font-weight:bold;">فاتوره رقم</span>
-                                </p>
-                            </td>
-                            <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
-                            </td>
-                            <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <span style="font-weight:bold;">Date</span><span t-esc="o.invoice_date"/><span style="font-weight:bold;">تاريخ</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <h6>
-                                    <span style="font-weight:bold;">Importer name</span><span t-esc="o.partner_id.name"/>
-                                    <span style="font-weight:bold;">اسم العميل</span><span t-esc="o.partner_id.arabic_name"/>
-                                </h6>
-                            </td>
-                        </tr>
-
-                         <tr>
-                            <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <h1>
-                                    <h6>
-                                        <span style="font-weight:bold;">Landing Place</span>
-                                        <span t-esc="o.landing_place.name"/>
-                                        <span style="font-weight:bold;">الميناء</span>
-                                    </h6>
-                                </h1>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <p><span style="font-weight:bold;">BAYAN#</span><span t-esc="o.bayan"/><span style="font-weight:bold;">رقم البيان</span></p>
-                            </td>
-                            <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
-                            </td>
-                            <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                <span  style="font-weight:bold;" t-esc="o.bill_of_lading"/>
-                            </td>
-                        </tr>
+<!--                            <tr>-->
+<!--                                <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="font-size:15px">-->
+<!--                                        <span>Invoice Details</span>-->
+<!--                                        <span>بيانات الفاتوره</span>-->
+<!--                                    </p>-->
+<!--                                </td>-->
+<!--                                <td colspan="3" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                    <p style="font-size:15px">-->
+<!--                                        <span>Customer Information</span>-->
+<!--                                        <span>بيانات العميل</span>-->
+<!--                                    </p>-->
+<!--                                </td>-->
+<!--                             </tr>-->
 
 
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:40% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>Statement</span><span>البيان</span></p>
-                            </th>
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:20% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>Amount</span><span>المبلغ</span></p>
+
+<!--                            <tr>-->
+<!--                            <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                <p style="font-size:30px">-->
+<!--                                    <span>Invoice</span>-->
+<!--                                    <span>فاتوره</span>-->
+<!--                                </p>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+
+<!--                        <tr>-->
+<!--                            <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                <p>-->
+<!--                                    <span style="font-size:13px;padding-right:10px;">Invoice NO</span>-->
+<!--                                    <span style="font-size:13px;" t-esc="o.name"/>-->
+<!--                                    <span style="font-size:13px;padding-left:10px;">فاتوره رقم</span>-->
+<!--                                </p>-->
+<!--                            </td>-->
+<!--                            <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">-->
+<!--                            </td>-->
+<!--                            <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                <span style="font-size:13px;padding-right:10px;">Date</span>-->
+<!--                                <span style="font-size:13px;" t-esc="o.invoice_date"/>-->
+<!--                                <span style="font-size:13px;padding-left:10px;">تاريخ</span>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                <h6>-->
+<!--                                    <span style="font-size:13px;padding-right:10px;">Importer name</span>-->
+<!--                                    <span style="font-size:13px;" t-esc="o.partner_id.name"/>-->
+<!--                                    <span style="font-size:13px;">اسم العميل</span>-->
+<!--                                    <span style="font-size:13px;padding-left:10px;" t-esc="o.partner_id.arabic_name"/>-->
+<!--                                </h6>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+
+<!--                         <tr>-->
+<!--                            <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                <h6>-->
+<!--                                    <span style="font-size:13px;padding-right:10px;">Customer VAT#</span>-->
+<!--                                    <span style="font-size:13px;" t-esc="o.partner_id.vat"/>-->
+<!--                                    <span style="font-size:13px;padding-left:10px;">الرقم الضريبي للعميل</span>-->
+<!--                                </h6>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+
+<!--                         <tr>-->
+<!--                            <td colspan="5" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                <h1>-->
+<!--                                    <h6>-->
+<!--                                        <span style="font-size:13px;padding-right:10px;">Landing Place</span>-->
+<!--                                        <span style="font-size:13px;" t-esc="o.landing_place.name"/>-->
+<!--                                        <span style="font-size:13px;padding-left:10px;">الميناء</span>-->
+<!--                                    </h6>-->
+<!--                                </h1>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+
+<!--                        <tr>-->
+<!--                            <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                <p>-->
+<!--                                    <span style="font-size:13px;padding-right:10px;">BAYAN#</span>-->
+<!--                                    <span style="font-size:13px;" t-esc="o.bayan"/>-->
+<!--                                    <span style="font-size:13px;padding-left:10px;">رقم البيان</span>-->
+<!--                                </p>-->
+<!--                            </td>-->
+<!--                            <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">-->
+<!--                            </td>-->
+<!--                            <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;">-->
+<!--                                <span style="font-size:13px;padding-right:10px;">Bill of Lading</span>-->
+<!--                                <span  style="font-size:13px;" t-esc="o.bill_of_lading"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+
+                            <td style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:5px 0 !important;width:40% !important;">
+                               <span style="font-size:13px;">Description</span>
+                                    <span style="font-size:13px;">الوصف</span>
+
+                            </td>
+                            <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:10% !important;">
+
+                                    <span style="font-size:13px;">Amount</span>
+                                    <span style="font-size:13px;">المبلغ</span>
+
                                 <!--<p style="margin:0;font-weight:bold;">المبلغ</p><p style="margin:0;font-weight:bold;">Amount</p>-->
 
-                            </th>
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:10% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>QTY</span><span>العدد</span></p>
+                            </td>
+                            <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:10% !important;">
+                               <span style="font-size:13px;">Quantity</span><span style="font-size:13px;">العدد</span>
                                 <!--<p style="margin:0;font-weight:bold;">العدد</p><p style="margin:0;font-weight:bold;">QTY</p>-->
-                            </th>
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:10% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>VAT 5%</span><span>الضريبه</span></p>
+                            </td>
+                            <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:15% !important;">
+                                <span style="font-size:13px;">VAT 5%</span><span style="font-size:13px;">الضريبه</span>
                                 <!--<p style="margin:0;font-weight:bold;">الضريبه</p><p style="margin:0;font-weight:bold;">VAT 5%</p>-->
-                            </th>
-                            <th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:20% !important;">
-                                <p style="margin:5px;font-weight:bold;"><span>Total Amount</span><span>المجموع الكلي</span></p>
+                            </td>
+                            <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:25% !important;">
+                                <span style="font-size:13px;">Total</span><span style="font-size:13px;">الاجمالي</span>
                                 <!--<p style="margin:0;font-weight:bold;">المجموع الكلي</p><p style="margin:0;font-weight:bold;">Total Amount</p>-->
-                            </th>
+                            </td>
                             <!--<th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:5% !important;"><p style="margin:0;font-weight:bold;">الوحده</p><p style="margin:0;font-weight:bold;">Unit</p></th>-->
                             <!--<th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:8% !important;"><p style="margin:0;font-weight:bold;">الخصم</p><p style="margin:0;font-weight:bold;">Discount</p></th>-->
                             <!--<th style="border: 1px solid #000000 !important;border-bottom: 0px solid #000000 !important;padding:0 !important;width:15% !important;"><p style="margin:0;font-weight:bold;">اجمالي القيمه</p><p style="margin:0;font-weight:bold;">Total Amount</p></th>-->
@@ -244,23 +465,23 @@
                                     <!--<td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:5.4% !important;">-->
                                         <!--<span t-esc="emp_count"/>-->
                                     <!--</td>-->
-                                    <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:40% !important;">
-                                        <span t-field="line.product_id.name"/>
-                                        <span t-field="line.product_id.arabic_name"/>
+                                    <td style="text-align:left;border: 1px solid #000000 !important;padding:5px 0 0 5px!important;width:40% !important;">
+                                        <span style="font-size:13px;" t-field="line.product_id.name"/>
+                                        <span style="font-size:13px;" t-field="line.product_id.arabic_name"/>
                                     </td>
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:20% !important;">
-                                        <span t-field="line.price_unit"/>
+                                        <span style="font-size:13px;" t-field="line.price_unit"/>
                                     </td>
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:10% !important;">
-                                        <span t-field="line.quantity"/>
+                                        <span style="font-size:13px;" t-field="line.quantity"/>
                                     <!--<span t-field="employee_data.product_uom"/>-->
                                     </td>
                                     <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:10% !important;">
-                                        <span t-field="line.tax_ids.name"/>
+                                        <span style="font-size:13px;" t-field="line.tax_ids.name"/>
                                     </td>
-                                    <td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:20% !important;">
+                                    <td style="background:white;border: 1px solid #000000 !important;padding:5px 0 !important;width:20% !important;">
                                         <!--<span t-field="employee_data.tax_id.name"/>-->
-                                    <span t-field="line.price_subtotal"/>
+                                    <span style="font-size:13px;" t-field="line.price_subtotal"/>
                                     </td>
                                     <!--<td style="border: 1px solid #000000 !important;padding:5px 0 !important;width:8% !important;">-->
                                         <!--&lt;!&ndash;<span t-field="employee_data.tax_id.name"/>&ndash;&gt;-->
@@ -271,71 +492,62 @@
                                     <!--</td>-->
                                 </tr>
                             </t>
+
+                        </tbody>
+                    </table>
+                    <br></br>
+                    <table class='table table-bordered' style="border-bottom: 0px solid #000000 !important;margin:0 !important;font-size:0.5em !important;text-align:center;width:60%;table-layout: auto !important;float: right;">
+                         <tbody>
                             <tr>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>Total with VAT</span><span>مجموع البنود الخاضعه للضريبه</span></p>
+                                <td style="color:black;border: 1px solid #000000 !important;padding:5px 0 !important;width:40%;">
+                                    <span style="font-size:13px;">Total with VAT/</span>
+                                    <span style="font-size:13px;">المجموع الخاضع للضريبه</span>
                                 </td>
-                                <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
-                                </td>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                </td>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <span t-esc="o.get_line_with_vat()['total_with_vat']"/>
+                                <td style="background:white;border: 1px solid #000000 !important;padding:5px 0 !important;width:13.5%;">
+                                    <span style="font-size:13px;" t-esc="o.get_line_with_vat()['total_with_vat']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>Total Zero VAT</span><span>مجموع البنود بدون ضريبه</span></p>
+                                <td style="color:black;border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                    <span style="font-size:13px;">Total Zero VAT/</span>
+                                    <span style="font-size:13px;">المجموع الغير خاضع للضريبه</span>
                                 </td>
-                                <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
-                                </td>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                </td>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <span t-esc="o.get_line_with_vat()['total_without_vat']"/>
+                                <td style="background:white;border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                    <span style="font-size:13px;" t-esc="o.get_line_with_vat()['total_without_vat']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>Total Before VAT</span><span>المجموع قبل الضريبه</span></p>
-                                </td>
-                                <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
-                                </td>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                <td style="background:#eeeded;color:black;border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                    <span style="font-size:13px;">Total Before VAT/</span>
+                                    <span style="font-size:13px;">الاجمالي قبل الضريبه</span>
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <span t-esc="o.amount_untaxed"/>
+                                    <span style="font-size:13px;" t-esc="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>VAT 5%</span><span>مقدار الضريبه</span></p>
+                                <td style="color:black;border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                    <span style="font-size:13px;">VAT 5%/</span>
+                                    <span style="font-size:13px;">ضريبه القيمه المضافه</span>
                                 </td>
-                                <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
-                                </td>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                </td>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                <td style="background:white;border: 1px solid #000000 !important;padding:5px 0 !important;">
                                     <t t-foreach="o.amount_by_group" t-as="amount_by_group">
-                                        <span t-esc="amount_by_group[3]"/>
+                                        <span style="font-size:13px;" t-esc="amount_by_group[3]"/>
                                     </t>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <p style="font-weight:bold;"><span>Total</span><span>المجموع الكلي</span></p>
-                                </td>
-                                <td colspan="2" style="border: 1px solid #000000 !important;padding:5px 0 !important;;">
-                                </td>
-                                <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                <td style="background:#eeeded;color:black;border: 1px solid #000000 !important;padding:5px 0 !important;">
+                                    <span style="font-size:13px;">Total invoice/</span>
+                                    <span style="font-size:13px;">اجمالي الفاتوره</span>
                                 </td>
                                 <td style="border: 1px solid #000000 !important;padding:5px 0 !important;">
-                                    <span t-esc="o.amount_total"/>
+                                    <span style="font-size:13px;" t-esc="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </td>
                             </tr>
 
-                        </tbody>
-                    </table>
+                         </tbody>
+                     </table>
 
 
                      <!--<table class='table table-bordered' style="margin:0 !important;font-size:0.5em !important;text-align:center;width:100%;table-layout: fixed !important;">-->

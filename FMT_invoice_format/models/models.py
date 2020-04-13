@@ -1,35 +1,32 @@
 # -*- coding: utf-8 -*-
+import time
 
-from odoo import models, fields, api
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 
-# class SaleAdvancePaymentInv(models.TransientModel):
-#     _inherit = 'sale.advance.payment.inv'
-#
-#
-#     def create_invoices(self):
-#         res = super(SaleAdvancePaymentInv, self).create_invoices()
-#         # print(">>>>>>>>>>>>", res['context'])
-#         res['context'] = {'default_bayan':'bayanbayanbayanbayanbayan'}
-#         # res['context'].update({'default_landing_place': 'landing_place'})
-#         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-#         print(">>>>>>>>>>>>", res['context'])
-#         # print("sale_orders", res)
-#         # print("sale_orders", res['sale_orders'])
-#         return res
-#
-#     def _create_invoice(self, order, so_line, amount):
-#         # res = super(SaleAdvancePaymentInv, self)._create_invoice(self, order, so_line, amount)
-#         # print(">>>>>>>>>>>>", res['context'])
-#         # res['context'] = {'default_bayan':'bayanbayanbayanbayanbayan'}
-#         # res['context']['default_landing_place'] = 'landing_place'
-#         print(">>>>>>>>>>>>>>>>>>>second function>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-#         # print(">>>>>>>>>>>>", res)
-#         # res = super(SaleAdvancePaymentInv, self)._create_invoice(self, order, so_line, amount)
-#         print(">>>>>>>>>>>>", order)
-#         # print("sale_orders", res)
-#         # print("sale_orders", res['sale_orders'])
-#         # return res
+class SaleAdvancePaymentInv(models.TransientModel):
+    _inherit = "sale.advance.payment.inv"
+
+    def create_invoices(self):
+        invoice = super(SaleAdvancePaymentInv, self).create_invoices()
+        sale_orders = self.env['sale.order'].browse(self._context.get('active_ids', []))
+        account_move = self.env['account.move'].search([('invoice_origin', '=', sale_orders.name)])
+        if account_move:
+            print("rrrrrrrrrrr")
+            account_move.update({
+                'date_of_prealert': sale_orders.date_of_prealert,
+                'eta_date': sale_orders.eta_date,
+                'po_date': sale_orders.po_date,
+                'saddad_payment_date': sale_orders.saddad_payment_date,
+                'consinee': sale_orders.consinee.id,
+                'bill_of_lading': sale_orders.bill_of_lading,
+                'bayan': sale_orders.bayan,
+                'shipping_line': sale_orders.shipping_line.id,
+                'landing_place': sale_orders.landing_place.id,
+                'order_status_id': sale_orders.order_status_id.id,
+            })
+        return invoice
 
 
 class SaleOrderLine(models.Model):
@@ -122,3 +119,4 @@ class SeaPort(models.Model):
     _name = 'sea.port'
 
     name = fields.Char(required=1)
+    arabic_name = fields.Char(required=1)

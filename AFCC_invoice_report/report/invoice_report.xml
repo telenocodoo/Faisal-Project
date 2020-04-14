@@ -192,11 +192,11 @@
 
                      <div class="container-fluid" >
                           <div style="width:100%;" class="row">
-                            <div class="col-auto" style="width:50%;text-align:left;line-height: 0.5 !important;">
-                              <p t-if="o.partner_id.name"><span style="color:black;">Customer Name :</span> <span t-esc="o.partner_id.name"/></p>
-                              <p t-if="o.partner_id.street"><span style="color:black;">Customer Address : </span><span t-esc="o.partner_id.street"/></p>
-                              <p t-if="o.partner_id.vat"><span style="color:black;">Customer VAT No:</span><span t-esc="o.partner_id.vat"/></p>
-                              <p t-if="o.landing_place.name"><span style="color:black;">Sea Port :</span><span t-esc="o.landing_place.name"/></p>
+                            <div class="col-auto" style="width:50%;text-align:left;">
+                              <p style="line-height: auto !important;" t-if="o.partner_id.name"><span style="color:black;">Customer Name :</span> <span t-esc="o.partner_id.name"/></p>
+                              <p style="line-height: auto !important;" t-if="o.partner_id.street"><span style="color:black;">Customer Address : </span><span t-esc="o.partner_id.street"/></p>
+                              <p style="line-height: auto !important;" t-if="o.partner_id.vat"><span style="color:black;">Customer VAT No:</span><span t-esc="o.partner_id.vat"/></p>
+                              <p style="line-height: auto !important;" t-if="o.landing_place.name"><span style="color:black;">Sea Port :</span><span t-esc="o.landing_place.name"/></p>
         <!--                      <p t-if="o.partner_id.phone">Telephone :</p>-->
         <!--                      <p t-if="o.partner_id.mobile">Mobile :</p>-->
         <!--                      <p t-if="o.partner_id.email">Email :</p>-->
@@ -221,11 +221,11 @@
 <!--                              <p t-if="o.bill_of_lading"><span t-esc="o.bill_of_lading"/></p>-->
 <!--                            </div>-->
 
-                            <div class="col-auto" style="width:50%;text-align:right;line-height: 0.5 !important;">
-                              <p t-if="o.partner_id.name"><span style="color:black;">اسم العميل</span>:<span t-esc="o.partner_id.arabic_name"/></p>
-                              <p t-if="o.partner_id.street2"><span style="color:black;">عنوان العميل</span>:<span t-esc="o.partner_id.street2"/></p>
-                              <p t-if="o.partner_id.vat"><span t-esc="o.partner_id.vat"/><span style="color:black;">:الرقم الضريبي للعميل</span></p>
-                              <p t-if="o.landing_place.name"><span t-esc="o.landing_place.arabic_name"/><span style="color:black;">:الميناء</span></p>
+                            <div class="col-auto" style="width:50%;text-align:right;">
+                              <p class="oe_inline" style="line-height: auto !important;" t-if="o.partner_id.name"><span style="color:black;">اسم العميل</span>:<span t-esc="o.partner_id.arabic_name"/></p>
+                              <p style="line-height: auto !important;" t-if="o.partner_id.street2"><span style="color:black;">عنوان العميل</span>:<span t-esc="o.partner_id.street2"/></p>
+                              <p style="line-height: auto !important;" t-if="o.partner_id.vat"><span t-esc="o.partner_id.vat"/><span style="color:black;">:الرقم الضريبي للعميل</span></p>
+                              <p style="line-height: auto !important;" t-if="o.landing_place.name"><span t-esc="o.landing_place.arabic_name"/><span style="color:black;">:الميناء</span></p>
         <!--                      <p t-if="o.partner_id.phone"><span>:الجوال</span></p>-->
         <!--                      <p t-if="o.partner_id.mobile"><span>:الهاتف المحمول</span></p>-->
         <!--                      <p t-if="o.partner_id.email"><span>:البريد الالكتروني</span></p>-->

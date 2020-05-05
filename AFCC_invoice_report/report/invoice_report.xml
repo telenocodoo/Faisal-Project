@@ -236,23 +236,28 @@
                             </div>
                           </div>
                       </div>
-                     <br></br>
+                     <br/>
 
                      <div class="container-fluid" >
                           <div style="width:100%;" class="row">
-                            <div t-if="o.invoice_origin" class="col-auto" style="width:35%;text-align:center;">
-                                <span style="font-size:17px;color:black;padding-right:5px;">Reference No</span>/
-                                <span style="font-size:19px;color:black;">المرجع</span><br></br>
+                            <div  class="col-auto" style="text-align:center;">
+                                <span style="font-size:14px;color:black;padding-right:5px;">Invoice Date</span>/
+                                <span style="font-size:14px;color:black;">تاريخ الفاتورة</span><br></br>
+                                <p class="text-center" t-field="o.invoice_date"/>
+                            </div>
+                            <div t-if="o.invoice_origin" class="col-auto" style="text-align:center;">
+                                <span style="font-size:14px;color:black;padding-right:5px;">Reference No</span>/
+                                <span style="font-size:14px;color:black;">رقم المرجع</span><br></br>
                                 <p class="text-center" t-field="o.invoice_origin"/>
                             </div>
-                              <div t-if="o.bayan" class="col-auto" style="width:30%;text-align:center;">
-                                <span style="font-size:17px;color:black;padding-right:5px;">Bayan</span>/
-                                <span style="font-size:19px;color:black;">رقم البيان </span><br></br>
+                              <div t-if="o.bayan" class="col-auto" style="text-align:center;">
+                                <span style="font-size:14px;color:black;padding-right:5px;">Bayan</span>/
+                                <span style="font-size:14px;color:black;">رقم البيان </span><br></br>
                                 <p class="text-center" t-field="o.bayan"/>
                             </div>
-                              <div t-if="o.bill_of_lading" class="col-auto" style="width:35%;text-align:center;">
-                                <span style="font-size:17px;color:black;padding-right:5px;">Bill of Lading</span>/
-                                <span style="font-size:19px;color:black;">بوليصة الشحن </span><br></br>
+                              <div t-if="o.bill_of_lading" class="col-auto" style="text-align:center;">
+                                <span style="font-size:14px;color:black;padding-right:5px;">Bill of Lading</span>/
+                                <span style="font-size:14px;color:black;">بوليصة الشحن </span><br></br>
                                 <p t-field="o.bill_of_lading"/>
                             </div>
                           </div>
